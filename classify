@@ -1,0 +1,27 @@
+#!/usr/bin/env python2
+
+import mahotas
+import milk
+
+import mahotas.features
+from imread import imread
+
+from glob import glob
+
+import cPickle
+import sys
+
+def features_for(imname):
+    img = mahotas.imread(imname)
+    return mahotas.features.haralick(img).mean(0)
+
+def classify(model, features):
+    return model.apply(features)
+
+if __name__ == "__main__":
+    model = cPickle.load(file("train.p", "rb"))
+
+    f = sys.argv[1]
+    print classify(model, features_for(f))
+
+
