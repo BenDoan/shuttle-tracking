@@ -1,18 +1,18 @@
 A python application for tracking the real-time UNO shuttle locations using computer vision and machine learning.
 
-# Hardware Setup
+## Hardware Setup
 
 - Raspberry Pi
 - Arch Linux Arm
 - Raspberry Pi Camera
 
 
-# Generate a classifier
+## Generate a classifier
 
 - Run train to generate a new classifer: train.p
-- Run classify on an image to classify wether a shuttle is in the picture
+- Run classify on an image to classify whether a shuttle is in the picture
 
-# Requirements
+## Requirements
 
 - imread
 - mahotas
