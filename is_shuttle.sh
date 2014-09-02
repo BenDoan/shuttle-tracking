@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
-raspistill -t 1 -o /tmp/id.jpg
-sh crop.sh /tmp/id.jpg > /dev/null 2>&1
-python classify /tmp/id.jpg
+TMP_LOC="/tmp/im.jpg"
+
+raspistill -t 1 -o - | convert -crop 330x130+1500+850 - $TMP_LOC
+python classify $TMP_LOC
