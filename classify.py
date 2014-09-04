@@ -18,10 +18,10 @@ def features_for(imname):
 def classify(model, features):
     return model.apply(features)
 
-if __name__ == "__main__":
+def get_class(f):
     model = cPickle.load(file("train.p", "rb"))
-
-    f = sys.argv[1]
-    print classify(model, features_for(f))
+    return classify(model, features_for(f))
 
 
+if __name__ == "__main__":
+    print get_class(sys.argv[1])
